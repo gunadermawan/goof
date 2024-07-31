@@ -10,6 +10,7 @@ var st = require("st");
 var crypto = require("crypto");
 var express = require("express");
 const csurf = require("csurf");
+var helmet = require("helmet");
 // deepcode ignore HttpToHttps: <please specify a reason of ignoring this>
 var https = require("https");
 var path = require("path");
@@ -72,7 +73,7 @@ app.get("/chat", routes.chat.get);
 app.put("/chat", routes.chat.add);
 app.delete("/chat", routes.chat.delete);
 app.use("/users", routesUsers);
-
+app.use(helmet());
 // Static
 app.use(st({ path: "./public", url: "/public" }));
 
