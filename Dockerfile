@@ -1,4 +1,4 @@
-FROM node:6-stretch
+FROM node:20.15.1-slim
 # FROM node:22.5.0-bookworm-slim
 # FROM node:14.1.0
 
